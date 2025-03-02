@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@layer base {
+  @font-face {
+    font-family: circular-web;
+    src: url(/fonts/circular-web.woff2) format("woff2");;
+  }
+
+  @font-face {
+    font-family: general;
+    src: url(/fonts/general.woff2) format("woff2");;
+  }
+
+  @font-face {
+    font-family: robert-regular;
+    src: url(/fonts/robert-regular.woff2) format("woff2");;
+  }
+
+  @font-face {
+    font-family: zentry-regular;
+    src: url(/fonts/zentry-regular.woff2) format("woff2");
+  }
+}
