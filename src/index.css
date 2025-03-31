@@ -1,23 +1,43 @@
 @import "tailwindcss";
 
-@layer base {
-  @font-face {
-    font-family: circular-web;
-    src: url(/fonts/circular-web.woff2) format("woff2");;
-  }
+body {
+  font-family: "General Sans", sans-serif;
+  width: 100dvw;
+  background-color: #dfdff0;
+  overflow-x: hidden;
+}
 
-  @font-face {
-    font-family: general;
-    src: url(/fonts/general.woff2) format("woff2");;
-  }
+@font-face {
+  font-family: circular-web;
+  src: url(/fonts/circular-web.woff2) format("woff2");
+}
 
-  @font-face {
-    font-family: robert-regular;
-    src: url(/fonts/robert-regular.woff2) format("woff2");;
-  }
+@font-face {
+  font-family: general;
+  src: url(/fonts/general.woff2) format("woff2");
+}
 
-  @font-face {
-    font-family: zentry-regular;
-    src: url(/fonts/zentry-regular.woff2) format("woff2");
-  }
+@font-face {
+  font-family: robert-regular;
+  src: url(/fonts/robert-regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: zentry-regular;
+  src: url(/fonts/zentry-regular.woff2) format("woff2");
+}
+
+@theme {
+  --font-zentry-regular: zentry-regular, "sans-serif";
+  --font-robert-regular: zentry-regular, "sans-serif";
+  --font-general: general, "sans-serif";
+  --font-circular-web: circular-web, "sans-serif";
+  --color-blue-50: #dfdff0;
+  --color-blue-75: #dfdff2;
+  --color-blue-100: #f0f2fa;
+  --color-blue-200: #010101;
+  --color-blue-300: #4fb7dd;
+  --color-violet: #5724ff;
+  --color-yellow-100: #8e983f;
+  --color-yellow-300: #edff66;
 }

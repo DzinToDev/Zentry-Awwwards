@@ -1,8 +1,10 @@
 import React from 'react'
 
-const App = () => {
+function App() {
   return (
-    <div className='text-2xl'>Welcome to Awwwards</div>
+  <main>
+    <h1 className='font-zentry-regular text-violet'>Welcome to Awwwards</h1>
+  </main>
   )
 }
 
