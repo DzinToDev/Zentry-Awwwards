@@ -50,11 +50,11 @@ body {
 
   .nav-hover-btn {
     position: relative;
-    margin-left: 10px;
+    margin-left: 40px;
     font-family: var(--font-general);
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: rgb(191 219 254);
+    color: #F0F2FA;
     cursor: pointer;
   }
 
@@ -65,7 +65,7 @@ body {
     left: 0;
     height: 2px;
     width: 100%;
-    background: rgb(38 38 38);
+    background: rgb(191, 198, 254);
     transform-origin: bottom right;
     scale: 0;
     transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -79,7 +79,7 @@ body {
   .floating-nav {
     background: black;
     border-radius: 8px;
-    border: 1px solid white;
+    border: 1px solid #F0F2FA;
   }
 
   .absolute-centerr {
