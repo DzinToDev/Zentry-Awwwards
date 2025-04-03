@@ -16,6 +16,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
+    "react-parallax-tilt": "^1.7.288",
     "react-use": "^17.6.0",
     "tailwindcss": "^4.0.9"
   },
