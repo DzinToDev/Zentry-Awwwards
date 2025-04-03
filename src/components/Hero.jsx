@@ -66,28 +66,38 @@ const Hero = () => {
   );
 
   useGSAP(() => {
-    gsap.set("#video-frame", {
-      clipPath: "polygon(14% 0%, 72% 0%, 90% 90%, 0% 100%)",
-      borderRadius: "0 0 40% 10%",
-    });
+    if (!isLoading) {
+      gsap.set("#video-frame", {
+        clipPath: "polygon(14% 0%, 72% 0%, 90% 90%, 0% 100%)",
+        borderRadius: "0 0 40% 10%",
+      });
 
-    gsap.from("#video-frame", {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      borderRadius: "0 0 0 0",
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: "#video-frame",
-        start: "center center",
-        end: "bottom center",
-        scrub: true,
-        // markers: true,
-      },
-    });
-  });
+      gsap.from("#video-frame", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        borderRadius: "0 0 0 0",
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: "#video-frame",
+          start: "center center",
+          end: "bottom center",
+          scrub: true,
+          // markers: true,
+        },
+      });
+    }
+  }, [isLoading]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1700);
+
+    return () => clearTimeout(timer); // Cleanup on unmount
+  }, []);
 
   return (
     <div id="parent" className=" relative h-dvh w-screen overflow-x-hidden">
-      {isLoading && (
+      {isLoading ? (
         <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
           <div className="three-body">
             <div className="three-body__dot"></div>
@@ -95,76 +105,78 @@ const Hero = () => {
             <div className="three-body__dot"></div>
           </div>
         </div>
-      )}
-
-      <div
-        id="video-frame"
-        className=" relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
-      >
+      ) : (
         <div>
-          <div className="absolute-centerr mask-clip-path absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
-            <div
-              onClick={handelMiniVdClick}
-              className=" origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
-            >
+          <div
+            id="video-frame"
+            className=" relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
+          >
+            <div>
+              <div className="absolute-centerr mask-clip-path absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
+                <div
+                  onClick={handelMiniVdClick}
+                  className=" origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
+                >
+                  <video
+                    // center on hover mini video
+                    ref={nextVideoRef}
+                    src={getVideoSrc(upcomingVideoIndex)}
+                    loop
+                    muted
+                    id="current-video"
+                    className="size-64 origin-center scale-150 object-center object-cover bg-pink-300"
+                    onLoadedData={handelVideoLoad}
+                  />
+                </div>
+              </div>
+
               <video
-                // center on hover mini video
                 ref={nextVideoRef}
-                src={getVideoSrc(upcomingVideoIndex)}
+                src={getVideoSrc(currentIndex)}
                 loop
                 muted
-                id="current-video"
-                className="size-64 origin-center scale-150 object-center object-cover bg-pink-300"
+                id="next-video"
+                className=" absolute-centerr invisible absolute z-20 size-64 object-cover object-center"
+                onLoadedData={handelVideoLoad}
+              />
+
+              <video
+                // this is background video
+                src={getVideoSrc(
+                  currentIndex === totalVideos - 1 ? 1 : currentIndex
+                )}
+                autoPlay
+                loop
+                muted
+                className=" absolute left-0 top-0 size-full object-center object-cover"
                 onLoadedData={handelVideoLoad}
               />
             </div>
+            <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
+              Gaming
+            </h1>
+
+            <div className=" absolute left-0 top-0 z-40 size-full">
+              <div className="mt-24 px-5  sm:px-10">
+                <h1 className="hero-heading text-blue-100">Redefine</h1>
+                <p className="max-w-64 font-circular-web text-blue-100">
+                  Enter the Metagame <br /> Unleash the Play Economy
+                </p>
+                <Button
+                  id="watch-trailer"
+                  title="Watch Trailer"
+                  leftIcon={<TiLocationArrow />}
+                  containerClass="!bg-yellow-300 flex-center gap-1 mt-5"
+                />
+              </div>
+            </div>
           </div>
 
-          <video
-            ref={nextVideoRef}
-            src={getVideoSrc(currentIndex)}
-            loop
-            muted
-            id="next-video"
-            className=" absolute-centerr invisible absolute z-20 size-64 object-cover object-center"
-            onLoadedData={handelVideoLoad}
-          />
-
-          <video
-            // this is background video
-            src={getVideoSrc(
-              currentIndex === totalVideos - 1 ? 1 : currentIndex
-            )}
-            autoPlay
-            loop
-            muted
-            className=" absolute left-0 top-0 size-full object-center object-cover"
-            onLoadedData={handelVideoLoad}
-          />
+          <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
+            Gaming
+          </h1>
         </div>
-        <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          Gaming
-        </h1>
-
-        <div className=" absolute left-0 top-0 z-40 size-full">
-          <div className="mt-24 px-5  sm:px-10">
-            <h1 className="hero-heading text-blue-100">Redefine</h1>
-            <p className="max-w-64 font-circular-web text-blue-100">
-              Enter the Metagame <br /> Unleash the Play Economy
-            </p>
-            <Button
-              id="watch-trailer"
-              title="Watch Trailer"
-              leftIcon={<TiLocationArrow />}
-              containerClass="!bg-yellow-300 flex-center gap-1 mt-5"
-            />
-          </div>
-        </div>
-      </div>
-
-      <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-        Gaming
-      </h1>
+      )}
     </div>
   );
 };
