@@ -1,12 +1,37 @@
-# React + Vite
+# 🌀 Zentry Awwwarded Clone – By [Your Name]
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A visually stunning and animated **Zentry clone** built with  
+**React, GSAP, TailwindCSS, React Icons, and Locomotive Scroll.**
 
-Currently, two official plugins are available:
+This is one of my most exciting and challenging projects yet!  
+I built this by following the amazing tutorial from [JavaScript Mastery]( https://youtu.be/zA9r5zTllx4?si=CAaKTfpzzoPpnffy ), inspired by the original **Awwwards Site Of The Day** – Zentry.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🖼️ Screenshots
 
-## Expanding the ESLint configuration
+![Home page](/public/screenshots/home-sc1.png)
+![Home page](/public/screenshots/about2.png)
+![About Page](/public/screenshots/about-1.png)
+![Mobile View](/public/screenshots/features.png)
+![About Page](/public/screenshots/about2.png)
+![Footer](/public/screenshots/footer-sc.png) 
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Live Demo  
+🔗 [Live Project Link]( https://zentry-awwwards-seven.vercel.app/ )
+
+## 💻 Tech Stack
+- React
+- GSAP
+- TailwindCSS
+- Locomotive Scroll
+- React Icons
+
+## 🧠 What I Learned
+In this project, jumping straight into code without much planning was a bit challenging,  
+but I took my time, understood it patiently, and learned a lot in the process.
+
+I’ve always wondered how high-end websites are crafted – the animations, flow, and design language.  
+Now I feel one step closer to building such creative **Design-to-Dev** experiences on my own.
+
+## 🙏 Acknowledgments
+Special thanks to **JavaScript Mastery** for the detailed and inspiring tutorial.  
+This project was a vibe! 🎨✨
