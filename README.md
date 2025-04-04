@@ -1,4 +1,4 @@
-# 🌀 Zentry Awwwarded Clone – By [Your Name]
+# 🎮🌀 Zentry Awwwarded Clone – By [Mahesh D G]
 
 A visually stunning and animated **Zentry clone** built with  
 **React, GSAP, TailwindCSS, React Icons, and Locomotive Scroll.**
