@@ -9,7 +9,7 @@ I built this by following the amazing tutorial from [JavaScript Mastery]( https:
 ## 🖼️ Screenshots
 
 ![Home page](/public/screenshots/home-sc1.png)
-![Home page](/public/screenshots/about2.png)
+![Home page](/public/screenshots/home-sc2.png)
 ![About Page](/public/screenshots/about-1.png)
 ![Mobile View](/public/screenshots/features.png)
 ![About Page](/public/screenshots/about2.png)
